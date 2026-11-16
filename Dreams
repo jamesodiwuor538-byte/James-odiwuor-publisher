@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>James Odiwuor Publishing</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+}
+
+header {
+  background: #14213d;
+  color: white;
+  text-align: center;
+  padding: 35px 15px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 27px;
+}
+
+header p {
+  color: #fca311;
+}
+
+nav {
+  background: #000;
+  padding: 14px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.hero {
+  text-align: center;
+  padding: 35px 15px;
+  background: white;
+}
+
+.hero h2 {
+  color: #14213d;
+}
+
+.books {
+  padding: 25px 15px;
+  text-align: center;
+}
+
+.book {
+  background: white;
+  max-width: 350px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #ccc;
+}
+
+.cover {
+  background: #14213d;
+  color: white;
+  padding: 55px 15px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cover h3 {
+  font-size: 25px;
+}
+
+.price {
+  color: #008000;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+button {
+  background: #fca311;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.about {
+  background: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+footer {
+  background: #14213d;
+  color: white;
+  text-align: center;
+  padding: 22px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>JAMES ODIWUOR PUBLISHING</h1>
+<p>Discover Knowledge Through Books</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#books">Books</a>
+<a href="#about">About</a>
+</nav>
+
+<section class="hero" id="home">
+<h2>Welcome to Our Publishing Platform</h2>
+<p>Explore inspiring books, knowledge and new ideas.</p>
+</section>
+
+<section class="books" id="books">
+<h2>Our Books</h2>
+
+<div class="book">
+<div class="cover">
+<h3>THE DREAM COMES TRUE</h3>
+<p>Written by James Odiwuor</p>
+</div>
+
+<h3>The Dream Comes True</h3>
+<p>Author: James Odiwuor</p>
+<p class="price">KES 200</p>
+
+<button onclick="orderBook()">
+Buy This Book
+</button>
+
+<p>Digital book edition</p>
+</div>
+
+</section>
+
+<section class="about" id="about">
+<h2>About the Author</h2>
+<p>
+James Odiwuor is an author committed to
+sharing knowledge, inspiration and ideas
+through creative writing and publishing.
+</p>
+</section>
+
+<footer>
+<p>James Odiwuor Publishing</p>
+<p>© 2026 All Rights Reserved</p>
+</footer>
+
+<script>
+function orderBook() {
+  alert("Thank you for choosing James Odiwuor Publishing. Contact the publisher to complete your KES 200 payment and receive the book.");
+}
+</script>
+
+</body>
+</html>
