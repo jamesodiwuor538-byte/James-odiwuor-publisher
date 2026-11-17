@@ -658,11 +658,46 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 <section style="background:#f2f2f2; padding:20px; text-align:center; margin-top:20px;">
   <h2>Contact James Odiwuor Publishing</h2>
-  <p>For b
-    </a>
-  </<p><strong>Phone / WhatsApp:</strong> <a href="tel:+254756578441>0756578441</a></p>
+  <p>For 
+<p><strong>M-PeI can see it — you already tried, but now the bottom is broken: _“For b Phone / WhatsApp:”_ and the “Contact the publisher” box still says _“Contact details will be listed here soon.”_
+
+Let's fix those 2 places now with the correct numbers:
+
+*WhatsApp = 0756 578 441*
+*M-Pesa = 0715 237 261*
+
+1. Fix “Contact the publisher” box
+
+In GitHub > `index.html` > Edit, find this:
+Contact details will be listed here soon.
+Delete it and paste this:
+<p><strong>M-Pesa (Payment):</strong> 0715 237 261 - James Odiwuor</p>
+<p><strong>WhatsApp / Help:</strong> <a href="https://wa.me/254756578441">0756 578 441</a></p>
 <p><a href="https://wa.me/254756578441?text=Hi%20James%2C%20I%20want%20to%20order%20a%20book">Chat on WhatsApp</a></p>
-<p><strong>M-Pesa:</strong> 0715 237 261 - James Odiwuor</p>
+2. Fix the broken footer at the very bottom
+
+Find this broken part:
+For b Phone / WhatsApp: Chat on WhatsApp
+M-Pesa: 0715 237 261 - James Odiwuor
+Chat with Us on WhatsApp
+Delete all of that and paste this clean one:
+<p>For book purchases and enquiries, contact us:</p>
+<p><strong>M-Pesa (Payment): 0715 237 261</strong><br>
+<strong>WhatsApp: <a href="https://wa.me/254756578441">0756 578 441</a></strong></p>
+<p><a href="https://wa.me/254756578441">Chat with Us on WhatsApp</a></p>
+3. Also fix “How to order” - Step 2 & 3
+
+*Step 2* - Replace:
+Send the book price to the publisher's M-Pesa number shown in the order window.
+With:
+Send the book price to M-Pesa <strong>0715 237 261</strong> (James Odiwuor).
+*Step 3* - Replace:
+Send your M-Pesa confirmation message to the publisher and your book will be sent to you.
+With:
+Send your M-Pesa confirmation to WhatsApp <strong>0756 578 441</strong> and your book will be sent to you.
+Then tap *Commit changes*, wait 1 minute, refresh.
+
+If you want, send me your `index.html` file here and I will fix it for you directly and send it back — no more broken text.sa:</strong> 0715 237 261 - James Odiwuor</p>
       Chat with Us on WhatsApp
     </a>
   </p>
