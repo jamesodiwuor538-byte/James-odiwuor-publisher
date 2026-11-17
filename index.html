@@ -1,243 +1,659 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>James Odiwuor Publishing</title>
+<meta name="description" content="Books by Kenyan author James Odiwuor: The Dream Comes True and The Young Couples. Order and pay with M-Pesa.">
+<meta property="og:title" content="James Odiwuor Publishing">
+<meta property="og:description" content="Books by James Odiwuor. Order and pay with M-Pesa.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jamesodiwuor538-byte.github.io/James-odiwuor-publisher/">
+<meta name="theme-color" content="#1b2a4a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='10' y='6' width='44' height='52' rx='3' fill='%231b2a4a'/%3E%3Crect x='10' y='6' width='7' height='52' fill='%23f2a93b'/%3E%3Ctext x='36' y='42' font-family='Georgia' font-size='26' fill='%23fff' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
 
 <style>
-* {
-  box-sizing: border-box;
+:root {
+  --ink: #1a1f2b;
+  --muted: #555c6b;
+  --line: #e2e4e9;
+  --paper: #ffffff;
+  --shelf: #eef0f3;
+  --night: #1b2a4a;
+  --sunrise: #f2a93b;
+  --rose: #a8315a;
+  --blush: #f7d9df;
+  --mpesa: #237823;
+  --mpesa-dark: #1a5c1a;
+  --display: "Archivo", "Arial Narrow", sans-serif;
+  --body: "Literata", Georgia, serif;
 }
+
+* { box-sizing: border-box; }
+
+[hidden] { display: none !important; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  color: #222;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
 }
-header {
-  background: #102b46;
-  color: white;
-  text-align: center;
-  padding: 30px 15px;
-}
-header h1 {
+
+h1, h2, h3 {
+  font-family: var(--display);
+  line-height: 1.05;
   margin: 0;
-  font-size: 28px;
 }
-nav {
-  background: #173e60;
-  padding: 15px;
-  text-align: center;
+
+p { margin: 0 0 1em; }
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--sunrise);
+  outline-offset: 3px;
 }
-nav a {
-  color: white;
+
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 8px;
+  background: var(--ink);
+  color: #fff;
+  padding: 8px 14px;
+  z-index: 100;
+}
+.skip:focus { left: 8px; }
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.site-head {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.site-head .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 60px;
+}
+.brand {
+  font-family: var(--display);
+  font-stretch: 75%;
+  font-weight: 800;
+  font-size: 1.25rem;
   text-decoration: none;
-  margin: 10px;
-  font-weight: bold;
+  letter-spacing: 0.01em;
 }
+.site-head nav {
+  display: flex;
+  gap: 22px;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.site-head nav a {
+  text-decoration: none;
+  color: var(--muted);
+}
+.site-head nav a:hover { color: var(--ink); }
+
+/* Hero: the books are the hero */
 .hero {
-  background: #e5edf4;
-  padding: 45px 20px;
-  text-align: center;
+  padding: 64px 0 72px;
+  background: var(--shelf);
 }
-.hero h2 {
-  color: #102b46;
-  font-size: 30px;
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 48px;
+  align-items: center;
 }
-.container {
-  max-width: 950px;
-  margin: auto;
-  padding: 25px 15px;
+.hero h1 {
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  font-stretch: 70%;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
 }
+.hero-copy p {
+  font-size: 1.2rem;
+  color: var(--muted);
+  max-width: 30ch;
+  margin-bottom: 28px;
+}
+
+.btn {
+  display: inline-block;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 14px 24px;
+  border-radius: 6px;
+  border: 2px solid var(--ink);
+  background: var(--ink);
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover { background: #000; }
+.btn-pay {
+  background: var(--mpesa);
+  border-color: var(--mpesa);
+}
+.btn-pay:hover { background: var(--mpesa-dark); border-color: var(--mpesa-dark); }
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+}
+.btn-ghost:hover { background: var(--ink); color: #fff; }
+
+.shelf {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 28px;
+  perspective: 1200px;
+}
+
+/* CSS book cover with a spine */
 .book {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 3px 12px #0001;
-}
-.cover {
-  background: #173e60;
-  color: white;
-  max-width: 240px;
-  min-height: 300px;
-  margin: 15px auto;
-  padding: 35px 15px;
+  position: relative;
+  width: 210px;
+  aspect-ratio: 2 / 3;
+  border-radius: 2px 6px 6px 2px;
+  padding: 26px 20px 22px 32px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  border: 5px solid #c49b48;
+  color: #fff;
+  box-shadow:
+    inset 10px 0 0 rgba(0, 0, 0, 0.22),
+    inset 12px 0 0 rgba(255, 255, 255, 0.12),
+    14px 18px 30px rgba(26, 31, 43, 0.28);
+  text-decoration: none;
+  transition: transform 0.25s ease;
 }
-.cover h2 {
-  font-size: 27px;
+.shelf .book:first-child { transform: rotateY(12deg) rotateZ(-2deg); }
+.shelf .book:last-child { transform: rotateY(-8deg) rotateZ(2deg) translateY(-18px); }
+.shelf .book:hover { transform: none; }
+
+.book-dream { background: linear-gradient(180deg, var(--night) 0 60%, #2c3f69 100%); }
+.book-couples { background: var(--rose); }
+.book .art {
+  flex: 1;
+  min-height: 0;
+  margin: 10px 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.book-dream .art {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'%3E%3Ccircle cx='50' cy='60' r='34' fill='%23f2a93b'/%3E%3Crect x='0' y='58' width='100' height='2' fill='%23f2a93b'/%3E%3C/svg%3E");
+  background-position: center bottom;
+}
+.book-couples .art {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'%3E%3Ccircle cx='38' cy='30' r='22' fill='%23ffffff' fill-opacity='.9'/%3E%3Ccircle cx='62' cy='30' r='22' fill='%23f7d9df' fill-opacity='.85'/%3E%3C/svg%3E");
+}
+.book .author {
+  font-family: var(--display);
+  font-stretch: 100%;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+  margin: 0;
+}
+.book .title {
+  margin-top: 14px;
+  font-family: var(--display);
+  font-stretch: 62%;
+  font-weight: 900;
+  font-size: 2.1rem;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+.book .tag {
+  font-size: 0.78rem;
+  line-height: 1.35;
+  opacity: 0.9;
+  margin: 0;
+  max-width: 16ch;
+}
+
+/* Book detail sections */
+.books { padding: 80px 0 24px; }
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-stretch: 75%;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+.title-entry {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 48px;
+  align-items: start;
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+}
+.title-entry .book { width: 100%; }
+.title-entry h3 {
+  font-size: 2rem;
+  font-stretch: 80%;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.byline {
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 18px;
+}
+.blurb { max-width: 58ch; }
+.buy-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 24px;
 }
 .price {
-  color: #087a43;
-  font-size: 25px;
-  font-weight: bold;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.6rem;
 }
-button {
-  background: #087a43;
-  color: white;
-  border: none;
-  padding: 14px 25px;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  margin: 10px;
+.price small {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-right: 4px;
 }
-button:hover {
-  background: #065b32;
+
+/* How to order: a real sequence */
+.order {
+  background: var(--night);
+  color: #fff;
+  padding: 72px 0;
+  margin-top: 48px;
 }
-section {
-  margin-bottom: 25px;
+.order .section-title { color: #fff; }
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  counter-reset: step;
 }
-.info {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
+.steps li {
+  counter-increment: step;
+  border-top: 3px solid var(--sunrise);
+  padding-top: 18px;
 }
+.steps li::before {
+  content: counter(step);
+  display: block;
+  font-family: var(--display);
+  font-stretch: 62%;
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--sunrise);
+  margin-bottom: 10px;
+}
+.steps h3 {
+  font-size: 1.3rem;
+  font-stretch: 85%;
+  margin-bottom: 8px;
+}
+.steps p { color: #c9d1e3; margin: 0; }
+
+/* About + contact */
+.about {
+  padding: 80px 0;
+}
+.about .wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+}
+.about p { max-width: 52ch; }
+.contact-card {
+  background: var(--shelf);
+  border-top: 4px solid var(--night);
+  padding: 28px;
+  align-self: start;
+}
+.contact-card h2 {
+  font-size: 1.6rem;
+  font-stretch: 80%;
+  margin-bottom: 12px;
+}
+
 footer {
-  background: #102b46;
-  color: white;
-  text-align: center;
-  padding: 25px;
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+footer p { margin: 0; }
+
+/* Order dialog */
+dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 0;
+  width: min(460px, calc(100vw - 32px));
+  color: var(--ink);
+  box-shadow: 0 24px 60px rgba(26, 31, 43, 0.35);
+}
+dialog::backdrop { background: rgba(26, 31, 43, 0.55); }
+.dlg-head {
+  padding: 22px 24px 18px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 16px;
+}
+.dlg-head h2 {
+  font-size: 1.5rem;
+  font-stretch: 80%;
+}
+.dlg-head p { margin: 4px 0 0; color: var(--muted); }
+.dlg-close {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--muted);
+  padding: 4px 8px;
+}
+.dlg-body { padding: 20px 24px 24px; }
+.dlg-body ol { padding-left: 20px; margin: 0 0 20px; }
+.dlg-body li { margin-bottom: 8px; }
+.till {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+.dlg-body .btn { width: 100%; text-align: center; }
+.note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 14px 0 0;
+}
+
+/* Responsive */
+@media (max-width: 820px) {
+  .hero { padding: 40px 0 56px; }
+  .hero .wrap { grid-template-columns: 1fr; gap: 40px; }
+  .hero-copy p { max-width: none; }
+  .shelf { gap: 18px; }
+  .shelf .book { width: min(42vw, 180px); padding: 18px 14px 16px 24px; }
+  .shelf .book .title { font-size: 1.55rem; }
+  .title-entry { grid-template-columns: 140px 1fr; gap: 24px; }
+  .title-entry .book { padding: 14px 10px 12px 20px; }
+  .title-entry .book .title { font-size: 1.15rem; }
+  .title-entry .book .tag { display: none; }
+  .title-entry .book .title { margin-top: 8px; }
+  .title-entry .book .author { font-size: 0.55rem; }
+  .steps { grid-template-columns: 1fr; gap: 28px; }
+  .about .wrap { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 520px) {
+  .wrap { padding: 0 16px; }
+  .site-head nav { gap: 14px; font-size: 0.88rem; white-space: nowrap; }
+  .site-head nav a[href="#books"] { display: none; }
+  .brand { font-size: 1.05rem; }
+  .title-entry { grid-template-columns: 1fr; }
+  .title-entry .book { width: 150px; }
+  .buy-row .btn { flex: 1; text-align: center; }
+}
+@media (max-width: 360px) {
+  .site-head nav a[href="#about"] { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .book { transition: none; }
 }
 </style>
 </head>
 
 <body>
+<a class="skip" href="#books">Skip to books</a>
 
-<header>
-<h1>JAMES ODIWUOR PUBLISHING</h1>
-<p>Inspiring Minds Through Books</p>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top">James Odiwuor Publishing</a>
+    <nav aria-label="Main">
+      <a href="#books">Books</a>
+      <a href="#order">How to order</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
 </header>
 
-<nav>
-<a href="#home">Home</a>
-<a href="#books">Our Books</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</nav>
+<main id="top">
 
-<div class="hero" id="home">
-<h2>Welcome to Our Publishing Platform</h2>
-<p>Discover stories, knowledge and inspiration
-through the power of reading.</p>
-<button onclick="document.getElementById('books').scrollIntoView()">
-Explore Books
-</button>
-</div>
-
-<div class="container">
-
-<section id="books">
-<h2>Our Published Books</h2>
-
-<div class="book">
-
-<div class="cover">
-<p>JAMES ODIWUOR</p>
-<h2>THE DREAM COMES TRUE</h2>
-<p>A Story of Dreams, Hope and Determination</p>
-</div>
-
-<h2>The Dream Comes True</h2>
-<p>Written by James Odiwuor</p>
-
-<p>
-A motivational book encouraging readers to
-believe in their dreams, work hard and remain
-determined in life.
-</p>
-
-<p class="price">KES 200</p>
-
-<button onclick="document.getElementById('payment').scrollIntoView()">
-Buy This Book
-</button>
-
-</div>
-  
-<div class="book">
-
-    <div class="cover">
-        <p>JAMES ODIWUOR</p>
-        <h2>THE YOUNG COUPLES</h2>
-        <p>Love, Commitment and Building Strong Relationships</p>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <h1>Stories about dreams, love and the work it takes.</h1>
+      <p>Books by Kenyan author James Odiwuor. Pay with M-Pesa and get your copy directly from the publisher.</p>
+      <a class="btn" href="#books">See the books</a>
     </div>
-
-    <h2>The Young Couples</h2>
-
-    <p>Written by James Odiwuor</p>
-
-    <p>
-        A book about love, commitment,
-        communication and building strong relationships.
-    </p>
-
-    <p class="price">KES 250</p>
-
-    <button onclick="document.getElementById('payment').scrollIntoView()">
-        Buy This Book
-    </button>
-
-</div>
-
-</section>
-<section id="payment" class="info">
-<h2>Book Payment</h2>
-<p>Book price: <strong>KES 200</strong></p>
-
-<p>
-Pay through M-Pesa using the payment details
-provided by the publisher.
-</p>
-
-<p>
-<strong>Payment method:</strong> M-Pesa
-</p>
-
-<p>
-Contact the publisher to receive the official
-Paybill or Till number and payment instructions.
-</p>
-
-<button onclick="document.getElementById('contact').scrollIntoView()">
-Contact Publisher
-</button>
+    <div class="shelf" aria-hidden="true">
+      <a class="book book-dream" href="#dream" tabindex="-1">
+        <p class="author">JAMES ODIWUOR</p>
+        <span class="title">The Dream Comes True</span>
+        <span class="art"></span>
+        <p class="tag">A story of dreams, hope and determination</p>
+      </a>
+      <a class="book book-couples" href="#couples" tabindex="-1">
+        <p class="author">JAMES ODIWUOR</p>
+        <span class="title">The Young Couples</span>
+        <span class="art"></span>
+        <p class="tag">Love, commitment and strong relationships</p>
+      </a>
+    </div>
+  </div>
 </section>
 
-<section id="about" class="info">
-<h2>About the Publisher</h2>
-<p>
-James Odiwuor is an aspiring author and publisher
-committed to sharing knowledge, inspiration and
-meaningful stories through books.
-</p>
-<p>
-Our mission is to encourage reading, creativity
-and personal development.
-</p>
+<section class="books" id="books">
+  <div class="wrap">
+    <h2 class="section-title">The books</h2>
+
+    <article class="title-entry" id="dream">
+      <div class="book book-dream" aria-hidden="true">
+        <p class="author">JAMES ODIWUOR</p>
+        <span class="title">The Dream Comes True</span>
+        <span class="art"></span>
+        <p class="tag">A story of dreams, hope and determination</p>
+      </div>
+      <div>
+        <h3>The Dream Comes True</h3>
+        <p class="byline">by James Odiwuor</p>
+        <p class="blurb">A motivational story for anyone holding on to a dream. It encourages readers to believe in what they want for their lives, work hard for it, and stay determined when the road gets long.</p>
+        <div class="buy-row">
+          <span class="price"><small>KES</small>200</span>
+          <button class="btn btn-pay" type="button" data-book="The Dream Comes True" data-price="200">Order this book</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="title-entry" id="couples">
+      <div class="book book-couples" aria-hidden="true">
+        <p class="author">JAMES ODIWUOR</p>
+        <span class="title">The Young Couples</span>
+        <span class="art"></span>
+        <p class="tag">Love, commitment and strong relationships</p>
+      </div>
+      <div>
+        <h3>The Young Couples</h3>
+        <p class="byline">by James Odiwuor</p>
+        <p class="blurb">A book about love, commitment and communication. Written for young couples who want to build a relationship that lasts, and for anyone thinking seriously about what that takes.</p>
+        <div class="buy-row">
+          <span class="price"><small>KES</small>250</span>
+          <button class="btn btn-pay" type="button" data-book="The Young Couples" data-price="250">Order this book</button>
+        </div>
+      </div>
+    </article>
+  </div>
 </section>
 
-<section id="contact" class="info">
-<h2>Contact Us</h2>
-<p>Publisher: James Odiwuor</p>
-<p>For book purchases and publishing enquiries,
-contact the publisher directly.</p>
+<section class="order" id="order">
+  <div class="wrap">
+    <h2 class="section-title">How to order</h2>
+    <ol class="steps">
+      <li>
+        <h3>Choose your book</h3>
+        <p>Tap "Order this book" under the title you want.</p>
+      </li>
+      <li>
+        <h3>Pay with M-Pesa</h3>
+        <p>Send the book price to the publisher's M-Pesa number shown in the order window.</p>
+      </li>
+      <li>
+        <h3>Get your copy</h3>
+        <p>Send your M-Pesa confirmation message to the publisher and your book will be sent to you.</p>
+      </li>
+    </ol>
+  </div>
 </section>
 
-</div>
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <h2 class="section-title">About James</h2>
+      <p>James Odiwuor is a Kenyan writer and publisher. He writes to share knowledge, encouragement and meaningful stories with readers, and publishes his own books so they can reach people directly.</p>
+      <p>His aim is simple: to get more people reading, and to help them grow through what they read.</p>
+    </div>
+    <div class="contact-card" id="contact">
+      <h2>Contact the publisher</h2>
+      <p>For orders, bulk copies for schools and groups, or publishing enquiries:</p>
+      <p class="contact-line" data-contact></p>
+    </div>
+  </div>
+</section>
+
+</main>
 
 <footer>
-<p>James Odiwuor Publishing</p>
-<p>© 2026 All Rights Reserved</p>
-<p>Inspiring Minds Through Books</p>
+  <div class="wrap">
+    <p>&copy; <span id="year">2026</span> James Odiwuor Publishing, Kenya</p>
+    <p>Pay safely with M-Pesa</p>
+  </div>
 </footer>
 
+<dialog id="order-dialog" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <div>
+      <h2 id="dlg-title">Order</h2>
+      <p id="dlg-price"></p>
+    </div>
+    <button class="dlg-close" type="button" aria-label="Close" data-close>&times;</button>
+  </div>
+  <div class="dlg-body">
+    <ol id="dlg-steps"></ol>
+    <a class="btn btn-pay" id="dlg-whatsapp" target="_blank" rel="noopener">Send order on WhatsApp</a>
+    <p class="note">Keep your M-Pesa confirmation SMS until you receive your book.</p>
+  </div>
+</dialog>
+
+<script>
+/*
+  PUBLISHER SETTINGS
+  Fill these in so buyers can pay and reach you.
+  Phone numbers: use the 254 format with no + or spaces, e.g. 254712345678.
+  Leave a value as "" to hide it on the site.
+*/
+const PUBLISHER = {
+  whatsapp: "",      // WhatsApp number for orders
+  mpesaNumber: "",   // Send Money number (or use tillNumber below)
+  tillNumber: "",    // Buy Goods Till number, if you have one
+  email: ""          // Optional contact email
+};
+
+const dialog = document.getElementById("order-dialog");
+const fmtPhone = (n) => n.replace(/^254/, "0").replace(/(\d{4})(\d{3})(\d{3})/, "$1 $2 $3");
+
+function payInstruction(price) {
+  if (PUBLISHER.tillNumber) {
+    return `Go to M-Pesa, choose <strong>Lipa na M-Pesa, Buy Goods</strong>, enter Till <span class="till">${PUBLISHER.tillNumber}</span> and pay <strong>KES ${price}</strong>.`;
+  }
+  if (PUBLISHER.mpesaNumber) {
+    return `Go to M-Pesa, choose <strong>Send Money</strong> to <span class="till">${fmtPhone(PUBLISHER.mpesaNumber)}</span> (James Odiwuor) and send <strong>KES ${price}</strong>.`;
+  }
+  return `Pay <strong>KES ${price}</strong> through M-Pesa. The publisher will give you the payment number when you send your order.`;
+}
+
+function openOrder(book, price) {
+  document.getElementById("dlg-title").textContent = book;
+  document.getElementById("dlg-price").textContent = `KES ${price}, paid with M-Pesa`;
+  const steps = [payInstruction(price)];
+  steps.push(PUBLISHER.whatsapp
+    ? "Send your order and M-Pesa confirmation on WhatsApp using the button below."
+    : "Send your order and M-Pesa confirmation to the publisher using the contact details on this page.");
+  steps.push("Your book will be sent to you once payment is confirmed.");
+  document.getElementById("dlg-steps").innerHTML = steps.map((s) => `<li>${s}</li>`).join("");
+
+  const wa = document.getElementById("dlg-whatsapp");
+  if (PUBLISHER.whatsapp) {
+    const msg = `Hello James, I would like to order "${book}" (KES ${price}). My M-Pesa confirmation code is: `;
+    wa.href = `https://wa.me/${PUBLISHER.whatsapp}?text=${encodeURIComponent(msg)}`;
+    wa.hidden = false;
+  } else {
+    wa.hidden = true;
+  }
+
+  if (typeof dialog.showModal === "function") {
+    dialog.showModal();
+  } else {
+    location.hash = "contact";
+  }
+}
+
+document.querySelectorAll("[data-book]").forEach((btn) => {
+  btn.addEventListener("click", () => openOrder(btn.dataset.book, btn.dataset.price));
+});
+dialog.querySelector("[data-close]").addEventListener("click", () => dialog.close());
+dialog.addEventListener("click", (e) => { if (e.target === dialog) dialog.close(); });
+
+// Contact details, built from the settings above
+const contact = document.querySelector("[data-contact]");
+const parts = [];
+if (PUBLISHER.whatsapp) parts.push(`WhatsApp: <a href="https://wa.me/${PUBLISHER.whatsapp}">${fmtPhone(PUBLISHER.whatsapp)}</a>`);
+if (PUBLISHER.email) parts.push(`Email: <a href="mailto:${PUBLISHER.email}">${PUBLISHER.email}</a>`);
+contact.innerHTML = parts.length ? parts.join("<br>") : "Contact details will be listed here soon.";
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
-  </html>
-  
+</html>
