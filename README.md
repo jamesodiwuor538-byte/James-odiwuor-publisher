@@ -9,10 +9,10 @@ The whole site is one file: `index.html`.
 
 Open `index.html`, search for `PUBLISHER SETTINGS`, and fill in:
 
-- `whatsapp`: WhatsApp number for orders, in 254 format (for example 254712345678)
-- `mpesaNumber`: M-Pesa Send Money number, or
+- `whatsapp`: WhatsApp number for orders, in 254 format (for example 254119044253)
+- `mpesaNumber`: M-Pesa Send Money number+254119044253
 - `tillNumber`: Lipa na M-Pesa Buy Goods Till number
-- `email`: optional contact email
+- `email`: optional contact email jamesodiwuor538@gmail.com
 
 Anything left as `""` is hidden. Once a WhatsApp number is set, each
 "Order this book" button opens a window with the right price and a
